@@ -6,6 +6,7 @@ import Main from "./Main/Main";
 import ModalWithForm from "./ModalWithForm/ModalWithForm";
 import ItemModal from "./ItemModal/ItemModal";
 import { getWeather, filterWeatherData } from "../utils/weatherApi";
+import Footer from "./Footer/Footer";
 
 function App() {
   const [activeModal, setActiveModal] = useState(""); // modal closed by default
@@ -93,6 +94,7 @@ function App() {
         card={selectedCard}
         onClose={closeModal}
       />
+      <Footer />
     </div>
   );
 }
