@@ -4,7 +4,7 @@ import { weatherOptions, defaultWeatherOptions } from "../../utils/constants";
 function WeatherCard({ weatherData }) {
   if (!weatherData) return null;
 
-  const isDay = Boolean(weatherData.is_day);
+  const isDay = Boolean(weatherData.isDay);
   const condition = weatherData.condition?.toLowerCase();
 
   const weatherOption = weatherOptions.find(

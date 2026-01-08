@@ -20,10 +20,13 @@
 }
 
 .modal__close {
+    width: 16px;
+    height: 16px;
     position: absolute;
     top: 20px;
     right: 28px;
-    color: #000DDD;
+    background: url("../../assets/closemodal.png") no-repeat center;
+    color: #000;
     opacity: 0.3;
     border: none;
 }

@@ -1,6 +1,6 @@
-export const getWeather = ({ latitude, longitude, APIkey }) => {
+export const getWeather = ({ latitude, longitude, apiKey }) => {
   return fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`
   ).then((res) => {
     if (res.ok) {
       return res.json();
@@ -37,9 +37,10 @@ const isDay = ({ sunrise, sunset }, now) => {
 // Maps OpenWeather values → app values
 const normalizeCondition = (condition) => {
   if (condition.includes("cloud")) return "cloudy";
-  if (condition.includes("rain")) return "rainy";
-  if (condition.includes("snow")) return "snowy";
-  if (condition.includes("clear")) return "sunny";
+  if (condition.includes("rain")) return "rain";
+  if (condition.includes("snow")) return "snow";
+  if (condition.includes("clear")) return "clear";
+  if (condition.includes("fog")) return "fog";
   return null; // fallback image will be used
 };
 

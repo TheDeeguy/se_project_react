@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { coordinates, APIkey } from "../utils/constants";
+import { coordinates, apiKey } from "../utils/constants";
 import Header from "./Header/Header";
 import Main from "./Main/Main";
 import ModalWithForm from "./ModalWithForm/ModalWithForm";
@@ -29,7 +29,7 @@ function App() {
   };
 
   useEffect(() => {
-    getWeather({ ...coordinates, APIkey })
+    getWeather({ ...coordinates, apiKey })
       .then((data) => {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
@@ -45,10 +45,10 @@ function App() {
       </div>
 
       <ModalWithForm
-        title="New Garment"
-        buttonText="Add Garment"
-        activeModal={activeModal} // pass the string
+        isOpen={activeModal === "add-garment"}
         onClose={closeModal}
+        title="New garment"
+        buttonText="Add garment"
       >
         <label htmlFor="name" className="modal__label">
           Name
@@ -57,6 +57,7 @@ function App() {
             className="modal__input"
             id="name"
             placeholder="Name"
+            required
           />
         </label>
 
@@ -67,6 +68,7 @@ function App() {
             className="modal__input"
             id="imageUrl"
             placeholder="Image URL"
+            required
           />
         </label>
 
@@ -74,7 +76,7 @@ function App() {
           <legend className="modal__legend">Select the weather type:</legend>
 
           <label className="modal__label modal__label_type_radio">
-            <input type="radio" name="weather" value="hot" />
+            <input type="radio" name="weather" value="hot" required />
             Hot
           </label>
 
