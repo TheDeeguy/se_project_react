@@ -1,0 +1,15 @@
+    .clothes-section__row {
+        display: flex;
+        flex-grow: 1;
+        
+    }
+
+    .clothes-section__items {
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        gap: 20px;
+    }
