@@ -1,5 +1,5 @@
 import { useForm } from "../../hooks/useForm";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import ModalWithForm from "../../src/components/ModalWithForm/ModalWithForm";
 
 const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   const defaultValues = {
