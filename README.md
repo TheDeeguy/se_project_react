@@ -24,9 +24,9 @@ WTWR is a React application that helps users decide what to wear based on weathe
 
 ## Project Pitch Video
 
-Check out [this video](ADD_YOUR_LOOM_LINK_HERE), where I describe my project and some challenges I faced while building it.
+Check out [this video](https://drive.google.com/file/d/1tkGZIObhShu2S8c5vbg3KRDgfRhkbYKZ/view), where I describe my project and some challenges I faced while building it.
 
 ## Links
 
-- [GitHub Repository](https://github.com/TheDeeguy/se_project_react/7206dcb14797d9d8233d069e904a915e5bac63ab)
-- [Live Demo](ADD_GITHUB_PAGES_LINK_IF_DEPLOYED)
+- [GitHub Repository] (https://github.com/TheDeeguy/se_project_react)
+- [Live Demo](https://github.com/TheDeeguy/se_project_react/commit/7206dcb14797d9d8233d069e904a915e5bac63ab)
