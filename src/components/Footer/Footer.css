@@ -1,17 +1,5 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #fff;
-  color: #222;
-  font-size: 1rem;
-}
-
-.footer-left {
-  text-align: left;
-}
-
-.footer-right {
-  text-align: right;
+  margin-top: 24px;
 }

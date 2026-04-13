@@ -11,7 +11,7 @@ import { getWeather, filterWeatherData } from "../utils/weatherApi";
 import { addItem, getItems, removeItem } from "../utils/api.js";
 import Footer from "./Footer/Footer";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
-import AddItemModal from "../../components/AddItemModal/AddItemModal";
+import AddItemModal from "../components/AddItemModal/AddItemModal.jsx";
 import ConfirmDeleteModal from "./ConfirmDeleteModal/ConfirmDeleteModal";
 
 function App() {
@@ -123,6 +123,7 @@ function App() {
               }
             />
           </Routes>
+          <Footer />
         </div>
 
         <AddItemModal
@@ -141,7 +142,6 @@ function App() {
           onClose={closeModal}
           onConfirm={handleConfirmDelete}
         />
-        <Footer />
       </div>
     </CurrentTemperatureUnitContext.Provider>
   );

@@ -24,7 +24,7 @@ function Header({ handleAddClick, weatherData }) {
         type="button"
         className="header__add-clothes-btn"
       >
-        + ADD CLOTHES
+        + Add Clothes
       </button>
       <div className="header__user-container">
         <NavLink className="header__nav-link" to="/">

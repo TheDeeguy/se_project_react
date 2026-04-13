@@ -68,7 +68,3 @@
   padding: 20px;
   box-sizing: border-box;
 }
-
-.modal__submit {
-  display: none; /* Hide default submit button */
-}
