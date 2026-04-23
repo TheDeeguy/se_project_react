@@ -4,15 +4,14 @@ const headers = {
   "Content-Type": "application/json",
 };
 
-const handleServerResponse = (res) => {
+export const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
 
-export const getItems = async () => {
-  const res = await fetch(`${baseUrl}/items`, {
+export const getItems = () => {
+  return fetch(`${baseUrl}/items`, {
     headers,
-  });
-  return handleServerResponse(res);
+  }).then(handleServerResponse);
 };
 
 export const addItem = ({ name, imageUrl, weather }) => {

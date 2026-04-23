@@ -15,7 +15,7 @@ import AddItemModal from "../components/AddItemModal/AddItemModal.jsx";
 import ConfirmDeleteModal from "./ConfirmDeleteModal/ConfirmDeleteModal";
 
 function App() {
-  const [activeModal, setActiveModal] = useState(""); // modal closed by default
+  const [activeModal, setActiveModal] = useState("");
   const [weatherData, setWeatherData] = useState({
     type: "",
     temp: { F: 999, C: 999 },
@@ -23,8 +23,7 @@ function App() {
     condition: "",
     isDay: true,
   });
-  console.log(weatherData);
-  const openAddGarmentModal = () => setActiveModal("add-garment");
+
   const closeModal = () => setActiveModal("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -43,19 +42,15 @@ function App() {
     setActiveModal("add-garment");
   };
 
-  const onAddItem = (inputValues) => {
-    const newCardData = {
-      name: inputValues.name,
-      weather: inputValues.weather,
-      imageUrl: inputValues.imageUrl,
-    };
-
-    addItem(newCardData)
+  const onAddItem = (inputValues, resetForm) => {
+    // Receive the reset handler function
+    addItem(inputValues)
       .then((data) => {
-        setClothingItems([data, ...clothingItems]);
-        closeModal();
+        // Rest of the code
+        setClothingItems((prevItems) => [data, ...prevItems]);
+        resetForm(); // Execute the reset handler here
       })
-      .catch(console.error);
+      .catch((err) => console.error(err));
   };
 
   useEffect(() => {
@@ -68,7 +63,6 @@ function App() {
 
     getItems()
       .then((data) => {
-        console.log("Clothing items received:", data);
         setClothingItems(data);
       })
       .catch(console.error);
@@ -119,6 +113,7 @@ function App() {
                 <Profile
                   clothingItems={clothingItems}
                   handleCardClick={handleCardClick}
+                  handleAddClick={handleAddClick}
                 />
               }
             />
