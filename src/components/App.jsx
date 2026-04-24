@@ -43,12 +43,10 @@ function App() {
   };
 
   const onAddItem = (inputValues, resetForm) => {
-    // Receive the reset handler function
     addItem(inputValues)
       .then((data) => {
-        // Rest of the code
         setClothingItems((prevItems) => [data, ...prevItems]);
-        resetForm(); // Execute the reset handler here
+        closeModal();
       })
       .catch((err) => console.error(err));
   };

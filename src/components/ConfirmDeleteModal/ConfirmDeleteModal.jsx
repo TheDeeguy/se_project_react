@@ -1,34 +1,40 @@
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./ConfirmDeleteModal.css";
 
 function ConfirmDeleteModal({ isOpen, onClose, onConfirm }) {
-  function handleSubmit(evt) {
-    evt.preventDefault();
-    onConfirm();
-  }
+  if (!isOpen) return null;
 
   return (
-    <ModalWithForm
-      title="Delete item?"
-      name="confirm-delete"
-      isOpen={isOpen}
-      onClose={onClose}
-      onSubmit={handleSubmit}
-      buttonText="Yes, delete"
-      extraClass="modal__content_type_confirm"
-    >
-      <p className="confirm-modal__text">
-        Are you sure you want to delete this item? This action is irreversible.
-      </p>
+    <div className="modal modal_opened">
+      <div className="modal__content modal__content_type_confirm">
+        <button type="button" className="modal__close" onClick={onClose}>
+          ×
+        </button>
 
-      <button
-        type="button"
-        className="confirm-modal__cancel-btn"
-        onClick={onClose}
-      >
-        Cancel
-      </button>
-    </ModalWithForm>
+        <p className="confirm-modal__text">
+          Are you sure you want to delete this item? This action is
+          irreversible.
+        </p>
+
+        <div className="confirm-modal__actions">
+          <button
+            type="button"
+            className="confirm-modal__delete-btn"
+            onClick={onConfirm}
+          >
+            Yes, delete
+          </button>
+
+          <button
+            type="button"
+            className="confirm-modal__cancel-btn"
+            onClick={onClose}
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
+
 export default ConfirmDeleteModal;

@@ -1,6 +1,8 @@
     .clothes-section__row {
         display: flex;
         flex-grow: 1;
+        flex-direction: column;
+        gap: 20px;
 
     }
 
@@ -15,3 +17,12 @@
         width: 100%;
         padding-left: 0;
     }
+
+    .clothes-section__add-btn {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        font: inherit;
+        color: inherit;
+}

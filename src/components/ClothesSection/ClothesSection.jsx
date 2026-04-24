@@ -10,7 +10,9 @@ export default function ClothesSection({
     <div className="clothes-section__row">
       <div>
         <p>Your items </p>
-        <button onClick={handleAddClick}>+Add new</button>
+        <button onClick={handleAddClick} className="clothes-section__add-btn">
+          Add garment
+        </button>
       </div>
 
       <ul className="clothes-section__items">
